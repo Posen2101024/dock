@@ -100,3 +100,9 @@ def image_list():
 @pytest.fixture(scope='function')
 def initial_commit():
     return '472afe80cb490b6827e775bcc8b0a42eaee27db5'
+
+@pytest.fixture(scope='function')
+def mock_commands_run(mocker):
+    mock = mocker.patch('dock_cli.utils.commands.run')
+    mock.return_value = mocker.MagicMock()
+    return mock

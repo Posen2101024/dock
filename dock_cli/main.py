@@ -54,7 +54,6 @@ def cli(ctx, config_file, log_level, docker, helm, git):
     ctx.obj.config_dir = pathlib.Path(config_file).parent.as_posix()
     ctx.obj.config_file = config_file
 
-
 cli.add_command(chart_cli)
 cli.add_command(image_cli)
 
